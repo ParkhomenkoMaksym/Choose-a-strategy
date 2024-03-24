@@ -46,7 +46,7 @@ namespace Strategy
         public MainWindow()
         {
             InitializeComponent();
-            // infoBlock.Text = "";
+            
             percentages = new List<int> {-10, -10, -10, -10, -10, -10, -10, -10, -10, -20 ,-20, -20, -20, -20,
                                             -30, -30, -30, -30, -40, -40, -50, 10, 10, 10, 10, 10, 10, 10, 10, 10,
                                              20, 20, 20, 20, 20, 20, 20, 30, 30, 30, 30, 40, 40, 40, 50, 50, 60, 70};
@@ -76,7 +76,7 @@ namespace Strategy
             {
                 balance = 0;
             }
-            //txtBInputBal.Text = inputBalance.ToString();
+            
         }
 
         private void numberCost_PreviewTextInput(object sender, TextCompositionEventArgs e)
@@ -97,7 +97,7 @@ namespace Strategy
             }
         }
             
-    //txtBCost.Text = inputCost.ToString();
+ 
 
 
         private void btnStart_Click(object sender, RoutedEventArgs e)
@@ -109,8 +109,7 @@ namespace Strategy
             else
             {
                 CalculatePercent();
-                //balanceTextBox.Visibility = Visibility.Collapsed;
-                //costTextBox.Visibility = Visibility.Collapsed;
+
                 btnStart.Visibility = Visibility.Collapsed;
                 numberBalance.IsEnabled = false;
                 numberCost.IsEnabled = false;
@@ -134,7 +133,6 @@ namespace Strategy
             if (result > 0)
             {
                 infoBlock.Text =
-                    //$"Current per cent: +{perCent}%\n" +
                     $"Balance: ${Math.Round(balance, 2)} the difference: +{Math.Round(result, 2)}\n" +
                     $"Cost:    ${Math.Round(cost, 2)} \n" +
                     
@@ -145,7 +143,6 @@ namespace Strategy
             else if (result <= 0)
             {
                 infoBlock.Text =
-                    //$"Current per cent: {perCent}%\n" +
                     $"Balance: ${Math.Round(balance, 2)} difference: {Math.Round(result, 2)}\n" +
                     $"Cost:    ${Math.Round(cost, 2)} \n" +
                     
@@ -161,27 +158,17 @@ namespace Strategy
 
         public string PercentMessage()
         {
-            //decimal result = balance - temperaryBalance;
+
             if (perCent > 0)
             {
                 percentBlock.Text =
                     $"Current percentage: +{perCent}%";
-                    //$"Current per cent: +{perCent}%\n" +
-                    //$"Cost:    ${Math.Round(cost, 2)} \n" +
-                    //$"Balance: ${Math.Round(balance, 2)} difference: +{Math.Round(result, 2)}\n" +
-                    //$"Saved:   ${Math.Round(save, 2)}\n" +
-                    //$"Do you want to Save your profit or Buy more or Pass?: ";
             }
 
             else if (perCent < 0)
             {
                 percentBlock.Text =
                     $"Current percentage: {perCent}%";
-                    //$"Current per cent: {perCent}%\n" +
-                    //$"Cost:    ${Math.Round(cost, 2)} \n" +
-                    //$"Balance: ${Math.Round(balance, 2)} difference: {Math.Round(result, 2)}\n" +
-                    //$"Saved:   ${Math.Round(save, 2)}\n" +
-                    //$"Do you want to Save your profit or Buy more or Pass?: ";
             }
             else
             {
@@ -282,18 +269,6 @@ namespace Strategy
                 txtBSave.Text = "";
                 keep = 0;
             }
-            //if (txtBSave.Text != "")
-            //{             
-           
-
-           // CalculatePercent();
-            
-            //}
-            //else
-            //{
-                
-            //    txtBSave.Text = "";
-            //}
 
         }
 
@@ -315,20 +290,7 @@ namespace Strategy
                 txtBBuy.Text = "";
                 more = 0;
             }
-            //if (txtBBuy.Text != "")
-            //{
-            //save -= more;
-            //    balance += more;
 
-            ////CalculatePercent();
-            //txtBBuy.Text = "";
-            //    lblError.Content = "";
-            
-            //}
-            //else
-            //{ 
-            //    txtBBuy.Text = "";
-            //}
         }
 
         private void btnNext_Click(object sender, RoutedEventArgs e)
@@ -352,29 +314,11 @@ namespace Strategy
 
         private void txtBSave_TextChanged(object sender, TextChangedEventArgs e)
         {
-            //if (txtBSave.Text != "")
-            //{
-            //    keep = Convert.ToDecimal(txtBSave.Text);
-            //    CalculatePercent();
-            //}
-            //else
-            //{
-            //    txtBSave.Text = "";
-            //    keep = 0;
-            //}
+
         }
         private void txtBBuy_TextChanged(object sender, TextChangedEventArgs e)
         {
-            //if (txtBBuy.Text != "")
-            //{
-            //    more = Convert.ToDecimal(txtBBuy.Text);
-            //    CalculatePercent();
-            //}
-            //else
-            //{
-            //    txtBBuy.Text = "";
-            //    more = 0;
-            //}
+
         }
 
 
